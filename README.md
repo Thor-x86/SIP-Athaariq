@@ -84,3 +84,11 @@ sail up
 ```
 
 Untuk menghentikannya, tekan **CTRL+C**.
+
+## Migrasi Database
+
+Setelah instalasi, database masih kosongan. Untuk mengisinya pertama-tama pastikan web app dalam posisi menyala dan stabil (tidak banyak output console bercucuran) lalu jalankan command berikut:
+
+```bash
+sail artisan migrate && sail artisan db:seed
+```
