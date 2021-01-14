@@ -3,7 +3,9 @@
 Merupakan web aplikasi yang membolehkan sekelompok orang untuk mempublikasikan berita terkini.
 
 **Pencipta:** Athaariq Ardhiansyah
+
 **Framework:** Laravel 8 + Jetstream Inertia
+
 **Library Editor:** Vue2Editor
 
 ## Email dan Password
