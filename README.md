@@ -58,7 +58,7 @@ sudo apt update && sudo apt install docker docker-compose -y
 Tahap ini untuk mempermudah penggunaan Docker Compose. Masukkan command berikut:
 
 ```bash
-nano .bashrc
+nano ~/.bashrc
 ```
 
 Pada baris paling terakhir, masukkan baris berikut:
