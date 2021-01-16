@@ -15,12 +15,12 @@ class RoleSeeder extends Seeder
   public function run()
   {
     DB::table('roles')->insert([
-      'label' => 'admin',
-      'is_curator' => true,
-    ]);
-    DB::table('roles')->insert([
       'label' => 'public',
       'is_curator' => false,
+    ]);
+    DB::table('roles')->insert([
+      'label' => 'admin',
+      'is_curator' => true,
     ]);
   }
 }
