@@ -28,7 +28,7 @@ class EditorialController extends Controller
           'name' => $entity->name,
           'title' => $entity->title,
           'publisher' => $entity->user->name,
-          'when' => $entity->created_at
+          'when' => date('H:i - F jS, Y', $entity->created_at->timestamp)
         ]);
       }
     } else {
@@ -39,7 +39,7 @@ class EditorialController extends Controller
           'name' => $entity->name,
           'title' => $entity->title,
           'publisher' => $entity->user->name,
-          'when' => $entity->created_at
+          'when' => date('H:i - F jS, Y', $entity->created_at->timestamp)
         ]);
       }
     }
@@ -93,7 +93,7 @@ class EditorialController extends Controller
     $isCurator = Auth::user()->role->is_curator;
     $title = $entity->title;
     $publisher = $entity->user->name;
-    $when = $entity->created_at;
+    $when = date('H:i - F jS, Y', $entity->created_at->timestamp);
     $content = $entity->content;
 
     return Inertia::render(
@@ -115,7 +115,7 @@ class EditorialController extends Controller
     $isCurator = Auth::user()->role->is_curator;
     $title = $entity->title;
     $publisher = $entity->user->name;
-    $when = $entity->created_at;
+    $when = date('H:i - F jS, Y', $entity->created_at->timestamp);
     $content = $entity->content;
 
     return Inertia::render(
