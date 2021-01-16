@@ -49,7 +49,10 @@
     },
     methods: {
       submitDelete() {
-        this.$inertia.delete(this.currentURL);
+        const isConfirm = confirm('Are you sure want to delete?');
+        if (isConfirm) {
+          this.$inertia.delete(this.currentURL);
+        }
       },
     },
   };
