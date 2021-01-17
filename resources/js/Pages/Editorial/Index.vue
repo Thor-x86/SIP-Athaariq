@@ -14,7 +14,7 @@
       </inertia-link>
     </div>
 
-    <list :data="data" :show-owner="isCurator" />
+    <list :data="data" :show-owner="isCurator" delete-path="/editorial/multidelete" />
   </app-layout>
 </template>
 

@@ -157,4 +157,20 @@ class EditorialController extends Controller
 
     return Inertia::location('/editorial');
   }
+
+  /**
+   * Remove multiple resource at once
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function multiDelete(Request $request) {
+    $deleteIDs = $request->input('deleteIDs');
+
+    foreach($deleteIDs as $eachID) {
+      $entity = News::find($eachID);
+      $entity->delete();
+    }
+
+    return Inertia::location('/editorial');
+  }
 }
