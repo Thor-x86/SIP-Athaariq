@@ -27,5 +27,8 @@ Route::get('/', function () {
 Route::resource('/editorial', 'App\Http\Controllers\EditorialController')
   ->middleware(['auth:sanctum', 'verified'])->name('index', 'home');
 
+Route::get('/editorial-download', 'App\Http\Controllers\EditorialController@download')
+  ->middleware(['auth:sanctum', 'verified']);
+
 Route::post('/editorial/multidelete', 'App\Http\Controllers\EditorialController@multiDelete')
   ->middleware(['auth:sanctum', 'verified']);

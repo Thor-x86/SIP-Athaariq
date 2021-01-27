@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ReportExport;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\News;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EditorialController extends Controller
 {
@@ -172,5 +174,12 @@ class EditorialController extends Controller
     }
 
     return Inertia::location('/editorial');
+  }
+
+  public function download() {
+    $isCurator = Auth::user()->role->is_curator;
+    if(!$isCurator) return redirect('home');
+
+    return Excel::download(new ReportExport, 'casualnews_report-'.now().'.xlsx');
   }
 }

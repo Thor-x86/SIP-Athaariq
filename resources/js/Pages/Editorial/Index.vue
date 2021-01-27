@@ -6,7 +6,14 @@
       </h2>
     </template>
 
-    <div v-if="!isCurator" class="mt-8 mx-auto px-4 w-full container">
+    <div v-if="isCurator" class="mt-8 mx-auto px-4 w-full container">
+      <a href="/editorial-download" class="block" download>
+        <jet-button class="w-full text-xl">
+          💾 Download Report as .xlsx
+        </jet-button>
+      </a>
+    </div>
+    <div v-else class="mt-8 mx-auto px-4 w-full container">
       <inertia-link :href="currentURL + '/create'" class="block">
         <jet-button class="w-full text-xl">
           + Create New Post
